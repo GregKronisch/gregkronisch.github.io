@@ -1,7 +1,7 @@
 # Personal website
 
-https://hgoldspiel.github.io
+https://gregkronisch.github.io
 
-Welcome to the repository for my personal website, where I will host highlights of my research, statistical vignettes, and other coding ventures.
+This is the repository for my (attempt at a) personal website to host my research and some R code vignettes.
 
-This page will be constantly evolving as I add more content down the road.
+I also wish need to acknowledge that this directly formatted from Harrison Goldspiel's personal website: https://hgoldspiel.github.io... Thanks Harry!
