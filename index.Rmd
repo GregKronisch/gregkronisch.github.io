@@ -8,6 +8,7 @@ output:
 \ 
 \ 
 
+(Need to update this text)
 Greetings! I'm a conservation biologist, data scientist, and outdoor enthusiast. 
 
 I recently completed my PhD in Ecology and Environmental Science at the University of Maine.
@@ -16,4 +17,4 @@ Welcome to my personal website for rambling on conservation research, wildlife, 
 
 When not tinkering in R, you might find me flipping logs in a forest somewhere. 
 
-My full CV is available [here](docs/Goldspiel_Harrison_CV.pdf).
+My full CV is available [here](docs/GregKronisch CV.pdf).
