@@ -1,5 +1,5 @@
 ---
-title: "Harrison B. Goldspiel"
+title: "Gregory R. Kronisch"
 output:
   html_document
 ---
