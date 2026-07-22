@@ -1,41 +1,33 @@
 name: "my-website"
 navbar:
-  title: "Harrison B. Goldspiel"
+  title: "Gregory R. Kronisch"
   left:
     - text: "Home"
       icon: glyphicon-tent  
       href: index.html
     - text: "Research"
-      icon: fa-frog
+      icon: fa-fishfins
       href: research.html
-    - text: "Resources"
+    - text: "R Code & Vignettes"
       icon: fa-code
       href: resources.html  
-    - text: "Blog"
-      icon: fa-pencil-alt
-      href: blog.html
     - text: "Misc."
-      icon: fa-hiking
+      icon: fa-lightbulb
       menu: 
-        - text: "21 Chunk Street"
-          href: twentyone-chunk-street.html
-        - text: "Long Trail (Pt. 1)"
-          href: LTjournal_Pt1.html
-        - text: "Long Trail (Pt. 2)"
-          href: LTjournal_Pt2.html
-        - text: "Long Trail (Pt. 3)"
-          href: LTjournal_Pt3.html
+        - text: "BioBase Professional Spotlight"
+          href: https://blog.biobasemaps.com/2023/10/27/professional-spotlight-studying-arcticcharr-habitat-in-maine/
+          
   right:
     - icon: fa-github
-      href: https://github.com/hgoldspiel
+      href: https://github.com/GregKronisch
     - icon: ai-researchgate
-      href: https://www.researchgate.net/profile/Harrison_Goldspiel
+      href: https://www.researchgate.net/profile/Gregory-Kronisch
     - icon: fa-graduation-cap
-      href: https://scholar.google.com/citations?user=OCbS0DMAAAAJ&hl=en
-    - icon: fa-tumblr
-      href: http://harryonwheels.tumblr.com/
+      href: https://scholar.google.com/citations?user=KTw12KgAAAAJ&hl=en
+    - icon: fa-orcid
+      href: https://orcid.org/my-orcid?orcid=0009-0000-5392-0490
     - icon: fa-linkedin
-      href: https://www.linkedin.com/in/harrisongoldspiel/
+      href: https://www.linkedin.com/in/gregory-kronisch/
 output_dir: "."
 output:
   html_document:
