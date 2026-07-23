@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Personal website
 
 https://gregkronisch.github.io
@@ -6,4 +7,14 @@ This is the repository for my (attempt at a) personal website to host my researc
 
 I also need to acknowledge that this directly formatted from Harrison Goldspiel's [personal website](https://hgoldspiel.github.io)...
 
+=======
+# Personal website
+
+https://gregkronisch.github.io
+
+This is the repository for my (attempt at a) personal website to host my research and some R code vignettes.
+
+I also need to acknowledge that this directly formatted from Harrison Goldspiel's [personal website](https://hgoldspiel.github.io)...
+
+>>>>>>> dde03b31d516f123924e5b05891d643c96dde50f
 Thanks Harry!
