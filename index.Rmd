@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ---
 title: "Gregory R. Kronisch"
 output:
@@ -14,22 +13,3 @@ Howdy! I'm a fish biologist, data scientist, and current PhD candidate in Ecolog
 My doctoral research follows cold-water fish living at the warm edge of their range: Maine's landlocked Arctic charr (*Salvelinus alpinus*), which are the southernmost populations in North America. I use acoustic telemetry, decades of mark-recapture data, and diet analysis to understand how these fish move, feed, and persist in a warming world.
 
 You can read my CV [here](docs/GregKronisch CV.pdf).
-
-=======
----
-title: "Gregory R. Kronisch"
-output:
-  html_document
----
-
-<img src="images/greg_main3.jpg" style="width:35%; margin-right: 20px" align="left">
-\ 
-\ 
-
-Greetings! I'm a fish biologist, data scientist, and current PhD candidate in Ecology and Environmental Science at the University of Maine.
-
-My doctoral research follows cold-water fish living at the warm edge of their range: Maine's landlocked Arctic charr (*Salvelinus alpinus*), which are the southernmost populations in North America. I use acoustic telemetry, decades of mark-recapture data, and diet analysis to understand how these fish move, feed, and persist in a warming world.
-
-You can read my CV [here](docs/GregKronisch CV.pdf).
-
->>>>>>> dde03b31d516f123924e5b05891d643c96dde50f

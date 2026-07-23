@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 name: "my-website"
 navbar:
   title: "Gregory R. Kronisch"
@@ -44,52 +43,3 @@ output:
     - academicons-1.8.6/css/academicons.css
     include:
       after_body: footer_normal.html
-      
-=======
-name: "my-website"
-navbar:
-  title: "Gregory R. Kronisch"
-  left:
-    - text: "Home"
-      icon: glyphicon-tent  
-      href: index.html
-    - text: "Research"
-      icon: fa-fish
-      href: research.html
-    - text: "R Code & Resources"
-      icon: fa-code
-      href: resources.html  
-    - text: "Misc. Links"
-      icon: fa-link
-      menu: 
-        - text: "My UMaine Webpage (School of Biology & Ecology)"
-          href: https://sbe.umaine.edu/people/greg-kronisch/
-        - text: "Nathan Furey Lab Website"
-          href: https://fishmovementecolab.wixsite.com/fureyfmelab/people
-        - text: "BioBase Professional Spotlight"
-          href: https://blog.biobasemaps.com/2023/10/27/professional-spotlight-studying-arcticcharr-habitat-in-maine/
-
-          
-          
-  right:
-    - icon: fa-github
-      href: https://github.com/GregKronisch
-    - icon: ai-researchgate
-      href: https://www.researchgate.net/profile/Gregory-Kronisch
-#    - icon: ai-google-scholar
-#      href: https://scholar.google.com/citations?user=KTw12KgAAAAJ&hl=en
-    - icon: fa-brands fa-orcid
-      href: https://orcid.org/my-orcid?orcid=0009-0000-5392-0490
-    - icon: fa-linkedin
-      href: https://www.linkedin.com/in/gregory-kronisch/
-output_dir: "."
-output:
-  html_document:
-    theme: yeti
-    css:
-    - custom.css
-    - academicons-1.8.6/css/academicons.css
-    include:
-      after_body: footer_normal.html
-      
->>>>>>> dde03b31d516f123924e5b05891d643c96dde50f
