@@ -11,9 +11,9 @@
 
 
 
-<title>Resources</title>
+<title>R Code &amp; Resources</title>
 
-<script src="site_libs/header-attrs-2.30/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.31/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -35,6 +35,18 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/htmltools-fill-0.5.9/fill.css" rel="stylesheet" />
+<script src="site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
+<link href="site_libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-1.3.1/leaflet.js"></script>
+<link href="site_libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
+<script src="site_libs/proj4-2.6.2/proj4.min.js"></script>
+<script src="site_libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
+<link href="site_libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
+<script src="site_libs/leaflet-binding-2.2.3/leaflet.js"></script>
+<script src="site_libs/leaflet-providers-3.0.0/leaflet-providers.js"></script>
+<script src="site_libs/leaflet-providers-plugin-2.2.3/leaflet-providers-plugin.js"></script>
+<script src="site_libs/clipboard-0.0.1/setClipboardText.js"></script>
 <link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
 
@@ -285,6 +297,12 @@ div.tocify {
   border-radius: 0px;
 }
 
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
 
 </style>
 
@@ -318,7 +336,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Harrison B. Goldspiel</a>
+      <a class="navbar-brand" href="index.html">Gregory R. Kronisch</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -331,7 +349,7 @@ div.tocify {
 </li>
 <li>
   <a href="research.html">
-    <span class="fa fa-frog"></span>
+    <span class="fa fa-fish"></span>
      
     Research
   </a>
@@ -340,67 +358,51 @@ div.tocify {
   <a href="resources.html">
     <span class="fa fa-code"></span>
      
-    Resources
-  </a>
-</li>
-<li>
-  <a href="blog.html">
-    <span class="fa fa-pencil-alt"></span>
-     
-    Blog
+    R Code &amp; Resources
   </a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="fa fa-hiking"></span>
+    <span class="fa fa-link"></span>
      
-    Misc.
+    Misc. Links
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="twentyone-chunk-street.html">21 Chunk Street</a>
+      <a href="https://sbe.umaine.edu/people/greg-kronisch/">My UMaine Webpage (School of Biology &amp; Ecology)</a>
     </li>
     <li>
-      <a href="LTjournal_Pt1.html">Long Trail (Pt. 1)</a>
+      <a href="https://fishmovementecolab.wixsite.com/fureyfmelab/people">Nathan Furey Lab Website</a>
     </li>
     <li>
-      <a href="LTjournal_Pt2.html">Long Trail (Pt. 2)</a>
-    </li>
-    <li>
-      <a href="LTjournal_Pt3.html">Long Trail (Pt. 3)</a>
+      <a href="https://blog.biobasemaps.com/2023/10/27/professional-spotlight-studying-arcticcharr-habitat-in-maine/">BioBase Professional Spotlight</a>
     </li>
   </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/hgoldspiel">
+  <a href="https://github.com/GregKronisch">
     <span class="fa fa-github"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://www.researchgate.net/profile/Harrison_Goldspiel">
+  <a href="https://www.researchgate.net/profile/Gregory-Kronisch">
     <span class="ai ai-researchgate"></span>
      
   </a>
 </li>
 <li>
-  <a href="https://scholar.google.com/citations?user=OCbS0DMAAAAJ&amp;hl=en">
-    <span class="fa fa-graduation-cap"></span>
+  <a href="https://orcid.org/my-orcid?orcid=0009-0000-5392-0490">
+    <span class="fa fa-brands fa-orcid"></span>
      
   </a>
 </li>
 <li>
-  <a href="http://harryonwheels.tumblr.com/">
-    <span class="fa fa-tumblr"></span>
-     
-  </a>
-</li>
-<li>
-  <a href="https://www.linkedin.com/in/harrisongoldspiel/">
+  <a href="https://www.linkedin.com/in/gregory-kronisch/">
     <span class="fa fa-linkedin"></span>
      
   </a>
@@ -414,70 +416,279 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Resources</h1>
-<h4 class="date">Last updated: 03 February 2026</h4>
+<h1 class="title toc-ignore">R Code &amp; Resources</h1>
+<h4 class="date">Last updated: 23 July 2026</h4>
 
 </div>
 
 
-<p>The following page provides examples for various coding and
-quantitative techniques I’ve used over the years that may be useful to
-others. This page is a <em>work in progress</em>. I will be adding more
-vignettes when available!</p>
+<p>(update text) The following page provides examples for various coding
+and quantitative techniques I’ve used over the years that may be useful
+to others. This page is a <em>work in progress</em>. I will be adding
+more vignettes when available!</p>
 <hr />
-<div id="data-visualization-tutorial" class="section level2">
-<h2>Data visualization tutorial</h2>
-<p><strong>Link:</strong> <a href="dataviz_part1_HBG.html"
-target="_blank" rel="noopener">Dataviz workshop</a></p>
-<p>Call me lazy, but when I read academic papers I like to zoom straight
-to the figures. Well made figures can tell you practically everything
-you need to know about a study. Of course, I’ll read the main text too
-(usually). But good figures help me better disentangle the often
-disjointed nature of scientific writing. There is a reason that
-supplementary graphical abstracts are growing in popularity! And with
-the growing visualization toolbox for data scientists, making high
-quality figures is easier than ever.</p>
-<p>Here is a little workshop I put together for a data science
-collective in Galapagos in 2019. This is by no means an attempt to
-reinvent the wheel, which I’m still learning how to maneuver myself.
-These slides constitute a brief introduction to data visualization,
-focusing on the Grammar of Graphics philosophy as implemented in R with
-<code>ggplot2</code>.</p>
+<div id="interactive-maps-in-r-with-leaflet" class="section level2">
+<h2>Interactive Maps in R with <code>leaflet</code></h2>
+<p>I do a lot of mapping in R and have been using the
+<code>leaflet</code> package for a few years. Unlike static maps in
+<code>ggplot2</code>, these allow users to pan, zoom, and even click on
+map objects for more information. On one hand, the code required is a
+fairly gross mixture of R and JavaScript, but the package is extremely
+flexible and allows for a lot of customization. The following vignettes
+demonstrate some of the basic functionality of <code>leaflet</code> in
+R.</p>
+<hr />
+<div id="basic-plotting" class="section level3">
+<h3><em>Basic Plotting</em></h3>
+<p>One of the things that’s nice about <code>leaflet</code> is that it
+doesn’t force you to format your dataset specifically for spatial
+datasets with <code>sp</code> or <code>sf</code>. You <em>can</em>, but
+it isn’t required.</p>
+<p>This first example was from a pilot study where we put GoPros down on
+a spawning reef to try getting footage of spawning Arctic Charr. We
+recorded camera number (<em>Camera</em>), GPS coordinates
+(<em>Latitude</em> &amp; <em>Longitude</em>), and the direction the
+camera was facing (<em>Direction</em>). We also assigned a color to each
+camera based on whether it was on the reef or off the reef
+(<em>Color</em>).</p>
+<p>The following code creates a simple interactive map with two layers:
+one for the GoPro cameras and one for some points of interest (POIs)
+that we identified in the area.</p>
+<pre class="r"><code>GoPro &lt;- data.frame(Camera = as.character(c(11, 5, 7, 8, 4)),
+                    Latitude =  c(44.73664, 44.73625, 44.73646, 44.73488, 44.73513),
+                    Longitude = c(-68.48991,-68.48971,-68.48959,-68.49012,-68.49026),
+                    Direction = c(&quot;West&quot;, &quot;North&quot;, &quot;West&quot;, &quot;West&quot;, &quot;South&quot;),
+                    Color = c(&quot;blue&quot;,&quot;blue&quot;,&quot;blue&quot;,&quot;green&quot;,&quot;green&quot;))
+
+
+GoPro_map &lt;- leaflet(options = leafletOptions(zoomControl = FALSE)) %&gt;%
+  addProviderTiles(providers$Esri.WorldImagery, group = &quot;World Imagery&quot;) %&gt;%
+  addProviderTiles(providers$OpenStreetMap.Mapnik, group = &quot;Street Map&quot;) %&gt;%
+  addProviderTiles(providers$Stadia.AlidadeSmooth, group = &quot;Grayscale&quot;) %&gt;%
+  
+  addCircleMarkers( # add points from data.frame
+    data = GoPro,
+      lng = ~Longitude,
+      lat = ~Latitude,
+    color = ~Color,
+    fillOpacity = 1,
+    popup = ~paste0(&quot;Direction: &quot;, Direction, &quot;&lt;br&gt;&quot;,
+                    Latitude, &quot; ,&quot;, Longitude),
+    label = ~paste0(&quot;Direction: &quot;, Direction),
+    group = &quot;GoPros&quot;) %&gt;%
+
+  addCircleMarkers( # add points manually
+    data= data.frame(
+      lng = c(-68.49053,-68.49481,-68.49260,
+              -68.49139,-68.49579,-68.50065),
+      lat = c( 44.73494, 44.73989, 44.73503,
+               44.73659, 44.73776, 44.74542),
+      label = c(&quot;Reef&quot;, &quot;Dead Fish?&quot;, &quot;Potential Staging Area&quot;,
+                &quot;2024 Hotspot&quot;, &quot;2024 Hotspot&quot;, &quot;2024 Hotspot&quot;)
+      ),
+    lng = ~lng,
+    lat = ~lat,
+    color = &quot;red&quot;,
+    fillOpacity = 1,
+    popup = ~paste0(label, &quot;&lt;br&gt;&quot;, lat, &quot; ,&quot;, lng),
+    label = ~label,
+    group = &quot;Points of Interest&quot;
+    ) %&gt;%
+
+ 
+  addLayersControl(overlayGroups = c(&quot;GoPros&quot;, &quot;Points of Interest&quot;),
+                   baseGroups = c(&quot;World Imagery&quot;, &quot;Street Map&quot;, &quot;Grayscale&quot;),
+                   options = layersControlOptions(collapsed = FALSE)) %&gt;% 
+
+  # setVView(lat = 44.734, lng = -68.49, zoom = 16) %&gt;%
+  addMouseCoordinates()
+
+GoPro_map</code></pre>
+<div class="leaflet html-widget html-fill-item" id="htmlwidget-0851e28162b9fda1cd35" style="width:672px;height:480px;"></div>
+<script type="application/json" data-for="htmlwidget-0851e28162b9fda1cd35">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}},"zoomControl":false},"calls":[{"method":"addProviderTiles","args":["Esri.WorldImagery",null,"World Imagery",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["OpenStreetMap.Mapnik",null,"Street Map",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addProviderTiles","args":["Stadia.AlidadeSmooth",null,"Grayscale",{"errorTileUrl":"","noWrap":false,"detectRetina":false}]},{"method":"addCircleMarkers","args":[[44.73664,44.73625,44.73646,44.73488,44.73513],[-68.48990999999999,-68.48971,-68.48959000000001,-68.49012,-68.49026000000001],10,null,"GoPros",{"interactive":true,"className":"","stroke":true,"color":["blue","blue","blue","green","green"],"weight":5,"opacity":0.5,"fill":true,"fillColor":["blue","blue","blue","green","green"],"fillOpacity":1},null,null,["Direction: West<br>44.73664 ,-68.48991","Direction: North<br>44.73625 ,-68.48971","Direction: West<br>44.73646 ,-68.48959","Direction: West<br>44.73488 ,-68.49012","Direction: South<br>44.73513 ,-68.49026"],null,["Direction: West","Direction: North","Direction: West","Direction: West","Direction: South"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addCircleMarkers","args":[[44.73494,44.73989,44.73503,44.73659,44.73776,44.74542],[-68.49053000000001,-68.49481,-68.4926,-68.49139,-68.49579,-68.50064999999999],10,null,"Points of Interest",{"interactive":true,"className":"","stroke":true,"color":"red","weight":5,"opacity":0.5,"fill":true,"fillColor":"red","fillOpacity":1},null,null,["Reef<br>44.73494 ,-68.49053","Dead Fish?<br>44.73989 ,-68.49481","Potential Staging Area<br>44.73503 ,-68.4926","2024 Hotspot<br>44.73659 ,-68.49139","2024 Hotspot<br>44.73776 ,-68.49579","2024 Hotspot<br>44.74542 ,-68.50065"],null,["Reef","Dead Fish?","Potential Staging Area","2024 Hotspot","2024 Hotspot","2024 Hotspot"],{"interactive":false,"permanent":false,"direction":"auto","opacity":1,"offset":[0,0],"textsize":"10px","textOnly":false,"className":"","sticky":true},null]},{"method":"addLayersControl","args":[["World Imagery","Street Map","Grayscale"],["GoPros","Points of Interest"],{"collapsed":false,"autoZIndex":true,"position":"topright"}]}],"limits":{"lat":[44.73488,44.74542],"lng":[-68.50064999999999,-68.48959000000001]}},"evals":[],"jsHooks":{"render":[{"code":"function(el, x, data) {\n  return (\n      function(el, x, data) {\n      // get the leaflet map\n      var map = this; //HTMLWidgets.find('#' + el.id);\n      // we need a new div element because we have to handle\n      // the mouseover output separately\n      // debugger;\n      function addElement () {\n      // generate new div Element\n      var newDiv = $(document.createElement('div'));\n      // append at end of leaflet htmlwidget container\n      $(el).append(newDiv);\n      //provide ID and style\n      newDiv.addClass('lnlt');\n      newDiv.css({\"position\":\"relative\",\"bottomleft\":\"0px\",\"background-color\":\"rgba(255, 255, 255, 0.7)\",\"box-shadow\":\"0 0 2px #bbb\",\"background-clip\":\"padding-box\",\"margin\":\"0\",\"padding-left\":\"5px\",\"padding-right\":\"5px\",\"color\":\"#333\",\"font-size\":\"9px\",\"font-family\":\"\\\"Helvetica Neue\\\", Arial, Helvetica, sans-serif\",\"text-align\":\"left\",\"z-index\":\"700\"});\n      return newDiv;\n      }\n\n\n      // check for already existing lnlt class to not duplicate\n      var lnlt = $(el).find('.lnlt');\n\n      if(!lnlt.length) {\n      lnlt = addElement();\n\n      // grab the special div we generated in the beginning\n      // and put the mousmove output there\n\n      map.on('mousemove', function (e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                           ' lon: ' + (e.latlng.lng).toFixed(5) +\n                           ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                           ' | zoom: ' + map.getZoom() +\n                           ' | x: ' + L.CRS.EPSG3857.project(e.latlng).x.toFixed(0) +\n                           ' | y: ' + L.CRS.EPSG3857.project(e.latlng).y.toFixed(0) +\n                           ' | epsg: 3857 ' +\n                           ' | proj4: +proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs ');\n      } else {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      }\n      });\n\n      // remove the lnlt div when mouse leaves map\n      map.on('mouseout', function (e) {\n      var strip = document.querySelector('.lnlt');\n      if( strip !==null) strip.remove();\n      });\n\n      };\n\n      //$(el).keypress(67, function(e) {\n      map.on('preclick', function(e) {\n      if (e.originalEvent.ctrlKey) {\n      if (document.querySelector('.lnlt') === null) lnlt = addElement();\n      lnlt.text(\n                      ' lon: ' + (e.latlng.lng).toFixed(5) +\n                      ' | lat: ' + (e.latlng.lat).toFixed(5) +\n                      ' | zoom: ' + map.getZoom() + ' ');\n      var txt = document.querySelector('.lnlt').textContent;\n      console.log(txt);\n      //txt.innerText.focus();\n      //txt.select();\n      setClipboardText('\"' + txt + '\"');\n      }\n      });\n\n      }\n      ).call(this.getMap(), el, x, data);\n}","data":null}]}}</script>
 <hr />
 </div>
-<div id="mapping-flickr-data" class="section level2">
-<h2>Mapping Flickr data</h2>
-<p><strong>Link:</strong> <a href="Flickr_hotspot_mapping.html"
-target="_blank" rel="noopener">Flickr mapping vignette</a></p>
-<p>If you thought your social media data were only being used for
-marketing and other profitable ventures, well think again! There has
-been a boom of environmental research in the last decade using big data
-from social media platforms including Twitter, Instagram, and Flickr to
-better understand a myriad of modern ecological and conservation
-challenges.</p>
-<p>In this vignette, I demonstrate some basic tasks with spatial point
-data using the <code>spatstat</code> package. The dataset consists of
-Flickr images from the northeastern United States from 2012-2016. This
-synthesis is part of an ongoing project at <a
-href="https://www.esf.edu/socialmediastudy/">SUNY ESF</a> to understand
-patterns of nature-based tourism and recreation in the Northern Forest
-region from New York to Maine.</p>
+<div id="including-additional-tools" class="section level3">
+<h3><em>Including Additional Tools</em></h3>
 <hr />
+</div>
+<div id="customizing-points" class="section level3">
+<h3><em>Customizing Points</em></h3>
+<hr />
+</div>
+</div>
+<div id="some-of-my-favorite-r-code" class="section level2">
+<h2>Some of My Favorite R Code</h2>
+<hr />
+<div id="simultaneously-install-load-packages" class="section level3">
+<h3><em>Simultaneously Install &amp; Load Packages</em></h3>
+<p>Sometimes when sending code to collaborators (or myself on a
+different computer), it’s important to make sure that all the packages
+you use are loaded. Though RStudio is pretty good about letting you know
+which aren’t loaded, it’s still easier to just write code to install and
+load packages rather than relying on the recipient to notice they don’t
+have something!</p>
+<p>This code checks for the packages you need from the list you provide,
+installs any that are missing, and loads them all to the work space. The
+packages used in this example were for the <code>leaflet</code> demos
+above.</p>
+<p>I use variations of this code snippet in nearly every R script I
+write.</p>
+<p><em>Original</em></p>
+<pre class="r"><code>install.packages(&quot;tidyverse&quot;)
+install.packages(&quot;viridis&quot;)
+install.packages(&quot;knitr&quot;)
+install.packages(&quot;leaflet&quot;)
+install.packages(&quot;leafem&quot;)
+install.packages(&quot;leaflet.extras&quot;)
+
+library(tidyverse)
+library(viridis)
+library(knitr)
+library(leaflet)
+library(leafem)
+library(leaflet.extras)</code></pre>
+<p><em>New</em></p>
+<pre class="r"><code>{ list.of.packages &lt;- c(&quot;tidyverse&quot;, &quot;viridis&quot;, &quot;knitr&quot;, &quot;leaflet&quot;, &quot;leafem&quot;, &quot;leaflet.extras&quot;) # define necessary pkgs
+  new.packages &lt;- list.of.packages[!(list.of.packages %in% installed.packages()[,&quot;Package&quot;])] # compare necessary vs installed pkgs
+    if(length(new.packages)) install.packages(new.packages) # install any new pkgs
+  lapply(list.of.packages, library, character.only = TRUE) # load pkgs
+  rm(list.of.packages, new.packages) # remove extra objects
+  # sessionInfo() # check which packages are actually installed
+  }</code></pre>
+<hr />
+</div>
+<div id="calculating-function-runtime" class="section level3">
+<h3><em>Calculating Function Runtime</em></h3>
+<p>I often run code that takes a long time to complete, so I wrote this
+function to calculate the runtime of any code you put inside it.
+Honestly it’s a bit over-engineered, but this wrapper function was
+really helpful when I ran models that took anywhere from 20 minutes to
+three days to complete. Just wrap your code in the
+<code>runtime()</code> function and it will return a message with the
+total time elapsed.</p>
+<pre class="r"><code>runtime &lt;- function(x){
+  start &lt;- Sys.time()
+  x
+  ifelse(difftime(Sys.time(), start) &lt;  as.difftime(minutes(1)),
+         paste0(&quot;Function ran for &quot;, round(difftime(Sys.time(),start, units = &quot;secs&quot;),3),
+                &quot; seconds; Ending &quot;, format(Sys.time(), format = &quot;%B %d, %Y %H:%M:%S&quot;)),
+         ifelse(difftime(Sys.time(),start) &lt;  as.difftime(hours(2)),
+                paste0(&quot;Function ran for &quot;, round(difftime(Sys.time(),start, units = &quot;mins&quot;),2),
+                       &quot; minutes; Ending &quot;, format(Sys.time(), format = &quot;%B %d, %Y %H:%M:%S&quot;)),
+                paste0(&quot;Function ran for &quot;, round(difftime(Sys.time(),start, units = &quot;hours&quot;),2),
+                       &quot; hours; Ending &quot;, format(Sys.time(), format = &quot;%B %d, %Y %H:%M:%S&quot;))
+         ))
+}</code></pre>
+<p>For example:</p>
+<pre><code>## [1] &quot;Function ran for 2.046 seconds; Ending July 23, 2026 01:22:09&quot;</code></pre>
+<hr />
+</div>
+<div id="customizing-ggallyggpairs" class="section level3">
+<h3><em>Customizing <code>GGally::ggpairs()</code></em></h3>
+<p>I recently had to make a large set of pairwise plots of environmental
+covariates for a manuscript and ran into the problem of having too many
+plots to easily view them all. Secondly, I wanted to be able to quickly
+identify which plots had significant correlations.</p>
+<p>I wrote this function in two parts: the first part updates
+<code>GGally::ggpairs</code> plots with customized lower panels to
+include correlation coefficients, p-values, is color coded. The second
+part allows you to subset these plots so a reasonable number can be
+viewed at a time.</p>
+<pre class="r"><code>library(GGally) # Yes, I realize that I&#39;m not loading these using my fancy code above 
+library(ggpubr)
+
+
+ggpairs_updated &lt;- function(covars){
+  
+  GGally::ggpairs(covars, lower = list(continuous = function(data, mapping, method=&quot;lm&quot;, ...){
+    p &lt;- ggplot(data = data, mapping = mapping) + 
+      geom_point() + 
+      geom_smooth(method=method,colour=&quot;blue&quot;, ...)+
+      ggpubr::stat_cor(aes(label=paste(..rr.label.., ..p.label.., sep = &quot;~`,`~&quot;)), 
+               method=&quot;pearson&quot;, label.y.npc = &quot;center&quot;)
+    
+    
+    x &lt;- eval_data_col(data, mapping$x)
+    y &lt;- eval_data_col(data, mapping$y)
+    
+    # Calculate correlation and p-value
+    test_res &lt;- cor.test(x, y, use = &quot;complete.obs&quot;)
+    p_val &lt;- test_res$p.value
+    r_val &lt;- test_res$estimate
+    
+    # Determine color based on p-value (e.g., p &lt; 0.01 is green, p &lt; 0.05 is yellow, otherwise grey)
+    # You can customize these colors and thresholds
+    if (p_val &lt; 0.01) {
+      border_col &lt;- &quot;green3&quot;
+      border_lw &lt;- 3
+      bg_col &lt;- &quot;green3&quot;
+    } else if (p_val &lt; 0.05) {
+      border_col &lt;- &quot;gold&quot;
+      border_lw &lt;- 2
+      bg_col &lt;- &quot;gold&quot;
+    } else {
+      border_col &lt;- &quot;grey92&quot;
+      border_lw &lt;- 1.5
+      bg_col &lt;- &quot;grey92&quot;
+    }
+    
+    p &lt;- p + theme(#panel.border = element_rect(fill = NA, color = border_col, linewidth = border_lw),
+      panel.background = element_rect(fill = bg_col, color = NA))
+    
+    return(p)
+    
+  }
+  ))
+}</code></pre>
+<p>Example using the entire <code>mtcars</code> dataset
+<img src="resources_files/figure-html/unnamed-chunk-8-1.png" alt="" width="672" /></p>
+<p>Again, this second part takes the output from
+<code>ggpairs_updated()</code> and allows you to subset the plots by row
+and column. This is useful when you have a large number of variables and
+want to view only a few at a time.</p>
+<pre class="r"><code>ggpairs_subset &lt;- function (ggpairs_output, selected_rows = NULL, selected_cols = NULL){
+  
+  plot_list = list()
+  
+  if (is.null(selected_rows)){selected_rows &lt;- 1:ggpairs_output$nrow}
+  if (is.null(selected_cols)){selected_cols &lt;- 1:ggpairs_output$ncol}
+  
+  for (i in seq_along(selected_rows)) {
+    for (j in seq_along(selected_cols)) {
+      # Extract the specific panel using getPlot
+      p &lt;- getPlot(ggpairs_output, i = selected_rows[i], j = selected_cols[j])
+      
+      # Store in list
+      plot_list &lt;- append(plot_list, list(p))
+    }
+  }
+  
+  output &lt;- ggmatrix(
+    plots = plot_list,
+    nrow = length(selected_rows),
+    ncol = length(selected_cols),
+    xAxisLabels = ggpairs_output$xAxisLabels[selected_cols],
+    yAxisLabels = ggpairs_output$yAxisLabels[selected_rows]
+  )
+  
+  return(output)
+  # rm(plot_list, selected_rows, selected_cols, p, plot_list, i, j, output)
+}</code></pre>
+<p>Subset <code>mtcars</code> to only show specific rows &amp; columns;
+these don’t need to be the same rows and columns
+<img src="resources_files/figure-html/unnamed-chunk-10-1.png" alt="" width="672" /><img src="resources_files/figure-html/unnamed-chunk-10-2.png" alt="" width="672" /></p>
+<hr />
+</div>
 </div>
 <div id="future-topics" class="section level2">
 <h2>Future topics</h2>
-<p>I’ll continue dusting off some old analyses to put on here. Some
-potential additions to this website might include:</p>
+<p>Some potential additions include:</p>
 <ul>
-<li>estimating survival in the <code>survival</code> package</li>
 <li>estimating survival and other demographic parameters in
 <code>RMark</code></li>
-<li>using occupancy, abundance, and distance sampling models in
-<code>unmarked</code></li>
-<li>randomization tests in <code>base</code> R</li>
-<li>classification/regression trees and random forests with
-<code>rpart</code> and <code>randomForest</code></li>
-<li>analyzing precipitation data series with <code>SPEI</code></li>
+<li>interpolating lake bathymetry from points</li>
+<li>calculating percent lake volume below/above depth contours</li>
 </ul>
 </div>
 
@@ -490,8 +701,8 @@ potential additions to this website might include:</p>
 
 <hr />
 <p style="text-align: center;">Compiled in R with RMarkdown and Github Pages.<br />
-Copyright &copy; <span id="year"></span><a href="https://github.com/hgoldspiel/"> Harrison Goldspiel.</a></p>
-<p style="text-align: center;"><span style="color: #808080;"><a href="mailto:hbgoldspiel@gmail.com">hbgoldspiel@gmail.com</a></span></p>
+Copyright &copy; <span id="year"></span><a href="https://github.com/gregkronisch/"> Greg Kronisch.</a></p>
+<p style="text-align: center;"><span style="color: #808080;"><a href="mailto:greg.kronisch@gmail.com">greg.kronisch@gmail.com</a></span></p>
 
 <br>
 
@@ -558,7 +769,7 @@ $(document).ready(function ()  {
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
     };
-    options.showAndHide = true;
+    options.showAndHide = false;
     options.smoothScroll = true;
 
     // tocify

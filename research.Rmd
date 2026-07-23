@@ -5,7 +5,7 @@ output:
   html_document:
     toc: true
     toc_float:
-      collapsed: true
+      collapsed: false
       smooth_scroll: true
 ---
 
@@ -14,7 +14,20 @@ My research mostly resides in the realm of ecology and conservation biology, wit
 Here is a short list of some projects I've worked on over the last several years.
 
 ***
+# My stuff (remove this header)
+## Arctic Charr
 
+### Conservation and Climate Change
+
+### Movement Ecology
+
+## Lake Sturgeon
+
+## Community Ecology
+### Onondaga Lake
+
+
+# Harrison's Stuff for Reference (remove all this later)
 ## Wildlife conservation
 
 ```{r, echo=FALSE, out.width="60%", out.height="60%", fig.cap="Left: A Tapichalaca tree frog (Hyloscirtus tapichalaca) from southern Ecuador. Right: Spotted salamander (Ambystoma maculatum).", fig.show='hold', fig.align='center'}
