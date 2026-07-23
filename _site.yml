@@ -6,25 +6,31 @@ navbar:
       icon: glyphicon-tent  
       href: index.html
     - text: "Research"
-      icon: fa-fishfins
+      icon: fa-fish
       href: research.html
-    - text: "R Code & Vignettes"
+    - text: "R Code & Resources"
       icon: fa-code
       href: resources.html  
-    - text: "Misc."
-      icon: fa-lightbulb
+    - text: "Misc. Links"
+      icon: fa-link
       menu: 
+        - text: "My UMaine Webpage (School of Biology & Ecology)"
+          href: https://sbe.umaine.edu/people/greg-kronisch/
+        - text: "Nathan Furey Lab Website"
+          href: https://fishmovementecolab.wixsite.com/fureyfmelab/people
         - text: "BioBase Professional Spotlight"
           href: https://blog.biobasemaps.com/2023/10/27/professional-spotlight-studying-arcticcharr-habitat-in-maine/
+
+          
           
   right:
     - icon: fa-github
       href: https://github.com/GregKronisch
     - icon: ai-researchgate
       href: https://www.researchgate.net/profile/Gregory-Kronisch
-    - icon: fa-graduation-cap
-      href: https://scholar.google.com/citations?user=KTw12KgAAAAJ&hl=en
-    - icon: fa-orcid
+#    - icon: ai-google-scholar
+#      href: https://scholar.google.com/citations?user=KTw12KgAAAAJ&hl=en
+    - icon: fa-brands fa-orcid
       href: https://orcid.org/my-orcid?orcid=0009-0000-5392-0490
     - icon: fa-linkedin
       href: https://www.linkedin.com/in/gregory-kronisch/
