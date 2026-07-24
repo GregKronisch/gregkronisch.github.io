@@ -39,68 +39,174 @@ This first example was from a pilot study where we put GoPros down on a spawning
 The following code creates a simple interactive map with two layers: one for the GoPro cameras and one for some points of interest (POIs) that we identified in the area.
 
 ```{r error = FALSE, message=FALSE, warning=FALSE}
+library(leaflet)
+
+# Make a Test Dataset (Alternatively Import From File)
 GoPro <- data.frame(Camera = as.character(c(11, 5, 7, 8, 4)),
                     Latitude =  c(44.73664, 44.73625, 44.73646, 44.73488, 44.73513),
                     Longitude = c(-68.48991,-68.48971,-68.48959,-68.49012,-68.49026),
                     Direction = c("West", "North", "West", "West", "South"),
                     Color = c("blue","blue","blue","green","green"))
 
-
-GoPro_map <- leaflet(options = leafletOptions(zoomControl = FALSE)) %>%
+GoPro_map <-
+  leaflet(
+    options = leafletOptions(zoomControl = FALSE) # turns off an annoying box
+    ) %>% 
+  # Add Basemap Layer (see https://leaflet-extras.github.io/leaflet-providers/preview/)
   addProviderTiles(providers$Esri.WorldImagery, group = "World Imagery") %>%
-  addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Street Map") %>%
-  addProviderTiles(providers$Stadia.AlidadeSmooth, group = "Grayscale") %>%
   
-  addCircleMarkers( # add points from data.frame
+  # Add Points using GoPro data.frame 
+  addCircleMarkers(
+    # Define Dataset
     data = GoPro,
-      lng = ~Longitude,
-      lat = ~Latitude,
-    color = ~Color,
-    fillOpacity = 1,
-    popup = ~paste0("Direction: ", Direction, "<br>",
-                    Latitude, " ,", Longitude),
-    label = ~paste0("Direction: ", Direction),
-    group = "GoPros") %>%
+      lng = ~Longitude, # reference the coordinates columns
+      lat = ~Latitude,  # reference the coordinates columns
 
-  addCircleMarkers( # add points manually
+    # Point Aesthetics
+    color = ~Color,  # use column to reference color (could also make color palette function)
+    stroke = FALSE,  # remove border for a cleaner look (at least I think so)
+    radius = 6,      # adjust point size (can also adjust this based on a value)
+    fillOpacity = 1, # make point opaque not transparent
+    
+    # Point Labeling
+    popup = ~paste0("Direction: ", Direction, "<br>", # text displayed when clicking point
+                    Latitude, ", ", Longitude),
+    label = ~paste0("Direction: ", Direction),        # text displayed when hovering over point 
+    group = "GoPros") %>%                             # layer group (important later)
+
+  
+  # Alternatively Add Points Manually
+  addCircleMarkers( 
     data= data.frame(
-      lng = c(-68.49053,-68.49481,-68.49260,
+      lng = c(-68.49053,-68.49260,
               -68.49139,-68.49579,-68.50065),
-      lat = c( 44.73494, 44.73989, 44.73503,
+      lat = c( 44.73494, 44.73503,
                44.73659, 44.73776, 44.74542),
-      label = c("Reef", "Dead Fish?", "Potential Staging Area",
+      label = c("Reef", "Potential Staging Area",
                 "2024 Hotspot", "2024 Hotspot", "2024 Hotspot")
       ),
-    lng = ~lng,
-    lat = ~lat,
-    color = "red",
-    fillOpacity = 1,
-    popup = ~paste0(label, "<br>", lat, " ,", lng),
+    lng = ~lng, # reference the coordinates columns
+    lat = ~lat, # reference the coordinates columns
+    
+    color = "red",     # make all points in group a single color
+    stroke = FALSE,    # remove border for a cleaner look
+    fillOpacity = 0.5, # make points semi-transparent for fun
+    
+    popup = ~paste0(label, "<br>", lat, ", ", lng),
     label = ~label,
     group = "Points of Interest"
-    ) %>%
-
- 
-  addLayersControl(overlayGroups = c("GoPros", "Points of Interest"),
-                   baseGroups = c("World Imagery", "Street Map", "Grayscale"),
-                   options = layersControlOptions(collapsed = FALSE)) %>% 
-
-  # setVView(lat = 44.734, lng = -68.49, zoom = 16) %>%
-  addMouseCoordinates()
+    ) 
 
 GoPro_map
+
 ```
+Play around with the map using your mouse and you'll notice a few things:
 
-
-*** 
-### *Including Additional Tools*
-
-
-
+* pan by left clicking and dragging the map
+* scrolling the mouse wheel or using `+` and `-` will adjust the zoom
+* double clicking causes it to zoom in
+* zooming out far enough changes the base map slightly based on image resolution
+  +  this could also be adding/removing labels for lakes/cities/roads/etc depending on the base map
 
 ***
 
-### *Customizing Points*
+### *Toggle Layers and Basemaps*
+
+Something that's also really important about `leaflet` is that (just like `ggplot`) layers are added in the order you call them, with the exception that basemaps are always on the bottom. You may notice that the red points of interest are kinda overlapping the green GoPro points, and eventually the blue points if you zoom out enough. Sometimes it's nice to be able to turn off layers or toggle between them
+
+Notice above that in the code above, each layer added to the map above has an argument for `group`, such as `group = GoPros` and `group = World Imagery`. By using `addLayersControl` we can add `overlaygroups` that turn on/off and `baseGroups` that you can cycle between. The layer most recently turned on will be plotted on top, regardless of order they were coded for the control box.
+
+
+```{r error = FALSE, message=FALSE, warning=FALSE}
+GoPro_map %>%
+  # Add More Basemap Options
+  addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Street Map") %>%
+  addProviderTiles(providers$Stadia.AlidadeSmooth, group = "Grayscale") %>%
+  
+  addLayersControl(overlayGroups = c("GoPros", "Points of Interest"), # toggle these layers on/off
+                   baseGroups = c("World Imagery", "Street Map", "Grayscale"), # switch between these
+                   options = layersControlOptions(collapsed = FALSE))
+```
+I tend to put basemap layers as `baseGroups` (this is probably intended), but theoretically you could assign points or combinations of both. For example, add black/white points in the group "*Greyscale*" to have a potentially publication-friendly figure.
+
+Look for [more basemap layers](https://leaflet-extras.github.io/leaflet-providers/preview/) to find one that suits your needs. Unfortunately, many require an API, so some trial and error may be necessary. I typically use layers from *OpenStreetMap*, *Stadia*, *Esri*, and *USGS*. Also be warned that sometimes layers will not zoom in as far.
+
+*** 
+
+### *Including Additional Tools*
+
+Sometimes you might want to add some tools to make life easier for checking distances between points or simply drawing another (temporary) point or polygon. Here's how to add further functionality to maps using `leafem` and `leaflet.extras`
+
+```{r error = FALSE, message=FALSE, warning=FALSE, eval = FALSE}
+library(leafem)         # addMouseCoordinates()
+library(leaflet.extras) # addDrawToolbar(), addMeasurePathToolbar(), addStyleEditor()
+
+GoPro_map %>%
+
+  # Display Lat & Long of Mouse Cursor and Zoom Level (0 is world view; these basemaps max out ~17-20)
+  addMouseCoordinates() %>%
+
+  # Simple Measuring Tool With a Lot of Customization (defaults to top right)
+  addMeasure() %>%  # shows lat/long location (point), length (polyline), and area/perimeter (polygon)
+                    # change length units: primaryLengthUnit/secondaryLengthUnit = "feet"/"miles
+                    #                                                              "meters"/"kilometers"
+                    # change area units: primaryAreaUnit/secondaryAreaUnit = "acres"/"hectares"
+                    #                                                        "sqmeters"/"sqmiles"
+                    # admittedly the default color schemes are awful
+                      # change with completedColor/activeColor = "#000000" (use hex colors notation)
+
+  
+  # A More Complicated Drawing Toolset (the argument inside lets you edit vertices and delete objects)
+  addDrawToolbar(editOptions=editToolbarOptions(selectedPathOptions=selectedPathOptions())) %>%
+              # Symbols are for polylines, polygons, squares, circles, markers, and points  
+
+    
+  # Display Measurements of All Drawn Features (works for both drawing toolsets; defaults to left side)
+  enableMeasurePath() %>%     # allows the display to work (default is meters)
+  addMeasurePathToolbar() %>% # toggle on/off with beaker symbol; refresh after eding vertices
+  
+
+  # Manually Adjust Any Map Feature (plotted data or drawn line) 
+  addStyleEditor() %>%  # Allows changes in point/line/polygons: 
+                            # outline - color/opacity/thickness/dashes,
+                            # fill - color/opacity, and label text (if clicked)
+                        # this breaks markers (blue pins)
+
+  
+  # Add Search Bar for Specific Text in Popups (doesn't work on draw shapes/points)
+  addSearchFeatures(targetGroups = c("GoPros", "Points of Interest")) # must define groups to search
+
+```
+
+```{r error = FALSE, message=FALSE, warning=FALSE, echo = FALSE}
+
+
+GoPro_map %>%
+  addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Street Map") %>%
+  addProviderTiles(providers$Stadia.AlidadeSmooth, group = "Grayscale") %>%
+
+  addLayersControl(overlayGroups = c("GoPros", "Points of Interest"),
+                   baseGroups = c("World Imagery", "Street Map", "Grayscale"),
+                   options = layersControlOptions(collapsed = FALSE)) %>%
+  addMouseCoordinates() %>% 
+  
+  addMeasure() %>% 
+  
+  addDrawToolbar(editOptions=editToolbarOptions(selectedPathOptions=selectedPathOptions())) %>% # 
+
+  enableMeasurePath() %>%
+  addMeasurePathToolbar() %>%
+  
+    
+  addStyleEditor() %>% # 
+  
+  addSearchFeatures(targetGroups = c("GoPros", "Points of Interest")) ##
+  
+
+```
+
+Play around with some of these new tools! They typically default to the left side of the map (except `addMeasure()`), and are added top to bottom in order you add them in the code.The location of the toolbars for `addLayersControl()`, `addMeasure()`, `addDrawToolbar()` and `addStyleEditor()` can be adjusted using arguments like `position = "topleft"` or `position = "bottomright"`, though I have yet to figure out the syntax for `addMeasurePathToolbar()` and `addSearchFeatures()`
+
 
 
 
@@ -142,12 +248,14 @@ library(leaflet.extras)
 *New*
 ```{r error = FALSE, message=FALSE, warning=FALSE, eval = FALSE}
 
-{ list.of.packages <- c("tidyverse", "viridis", "knitr", "leaflet", "leafem", "leaflet.extras") # define necessary pkgs
-  new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])] # compare necessary vs installed pkgs
+{ # define necessary packages
+  list.of.packages <- c("tidyverse", "viridis", "knitr", "leaflet", "leafem", "leaflet.extras")
+  # compare necessary vs installed packages
+  new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])] 
     if(length(new.packages)) install.packages(new.packages) # install any new pkgs
   lapply(list.of.packages, library, character.only = TRUE) # load pkgs
   rm(list.of.packages, new.packages) # remove extra objects
-  # sessionInfo() # check which packages are actually installed
+  # sessionInfo() # option to check which packages are actually installed
   }
 
 ```
@@ -298,13 +406,13 @@ ggpairs_subset(ggpairs_updated(mtcars), selected_rows = c(1,3:7), selected_cols 
 
 
 
-
 ***
 
 ## Future topics
 
 Some potential additions include:
 
+- customizing `leaflet` point markers using *Awesome Markers*
 - estimating survival and other demographic parameters in `RMark`
 - interpolating lake bathymetry from points
 - calculating percent lake volume below/above depth contours 
