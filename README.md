@@ -6,4 +6,4 @@ This is the repository for my (attempt at a) personal website to host my researc
 
 I also need to acknowledge that this is directly formatted from Harrison Goldspiel's [personal website](https://hgoldspiel.github.io)...
 
-Thanks Harry!
+Thanks Harry! 
