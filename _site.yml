@@ -5,7 +5,7 @@ navbar:
     - text: "Home"
       icon: glyphicon-tent  
       href: index.html
-    - text: "Research"
+    - text: "Research (WIP)"
       icon: fa-fish
       href: research.html
     - text: "R Code & Resources"
@@ -14,13 +14,18 @@ navbar:
     - text: "Misc. Links"
       icon: fa-link
       menu: 
-        - text: "My UMaine Webpage (School of Biology & Ecology)"
+        - text: " My UMaine Grad Webpage"
+          icon: fa-graduation-cap
           href: https://sbe.umaine.edu/people/greg-kronisch/
-        - text: "Nathan Furey Lab Website"
+        - text: " Nathan Furey Lab Website"
+          icon: fa-university
           href: https://fishmovementecolab.wixsite.com/fureyfmelab/people
-        - text: "BioBase Professional Spotlight"
+        - text: " BioBase Professional Spotlight"
+          icon: fa-person-rays
           href: https://blog.biobasemaps.com/2023/10/27/professional-spotlight-studying-arcticcharr-habitat-in-maine/
-
+        - text: " Ice Fishing Tutorial for UMaine's AFS Student Subunit"
+          icon: fa-snowflake
+          href: https://www.instagram.com/p/DU8epoTEaN4/
           
           
   right:
