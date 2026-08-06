@@ -9,6 +9,18 @@ output:
       smooth_scroll: true
 ---
 
+<style>
+/* Tells the Markdown TOC generator to completely ignore Leaflet elements */
+.leaflet-container h1, 
+.leaflet-container h2, 
+.leaflet-container h3, 
+.leaflet-container h4,
+.leaflet-control-measure {
+  tocify-ignore: true !important;
+}
+</style>
+
+
 (update text) The following page provides examples for various coding and quantitative techniques I've used over the years that may be useful to others. This page is a *work in progress*. I will be adding more vignettes when available!
 
 ***
@@ -38,7 +50,7 @@ This first example was from a pilot study where we put GoPros down on a spawning
 
 The following code creates a simple interactive map with two layers: one for the GoPro cameras and one for some points of interest (POIs) that we identified in the area.
 
-```{r error = FALSE, message=FALSE, warning=FALSE}
+```{r error = FALSE, message=FALSE, warning=FALSE, cache = TRUE}
 library(leaflet)
 
 # Make a Test Dataset (Alternatively Import From File)
@@ -117,7 +129,7 @@ Something that's also really important about `leaflet` is that (just like `ggplo
 Notice above that in the code above, each layer added to the map above has an argument for `group`, such as `group = GoPros` and `group = World Imagery`. By using `addLayersControl` we can add `overlaygroups` that turn on/off and `baseGroups` that you can cycle between. The layer most recently turned on will be plotted on top, regardless of order they were coded for the control box.
 
 
-```{r error = FALSE, message=FALSE, warning=FALSE}
+```{r error = FALSE, message=FALSE, warning=FALSE, cache = TRUE}
 GoPro_map %>%
   # Add More Basemap Options
   addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Street Map") %>%
@@ -137,7 +149,7 @@ Look for [more basemap layers](https://leaflet-extras.github.io/leaflet-provider
 
 Sometimes you might want to add some tools to make life easier for checking distances between points or simply drawing another (temporary) point or polygon. Here's how to add further functionality to maps using `leafem` and `leaflet.extras`
 
-```{r error = FALSE, message=FALSE, warning=FALSE, eval = FALSE}
+```{r error = FALSE, message=FALSE, warning=FALSE, eval = FALSE, cache = TRUE}
 library(leafem)         # addMouseCoordinates()
 library(leaflet.extras) # addDrawToolbar(), addMeasurePathToolbar(), addStyleEditor()
 
@@ -178,9 +190,12 @@ GoPro_map %>%
 
 ```
 
-```{r error = FALSE, message=FALSE, warning=FALSE, echo = FALSE}
+```{r error = FALSE, message=FALSE, warning=FALSE, echo = FALSE, cache = TRUE}
+# install.packages("widgetframe")
+# library(widgetframe)
 
-
+# widgetframe::frameWidget(
+  
 GoPro_map %>%
   addProviderTiles(providers$OpenStreetMap.Mapnik, group = "Street Map") %>%
   addProviderTiles(providers$Stadia.AlidadeSmooth, group = "Grayscale") %>%
@@ -200,8 +215,9 @@ GoPro_map %>%
     
   addStyleEditor() %>% # 
   
-  addSearchFeatures(targetGroups = c("GoPros", "Points of Interest")) ##
-  
+  addSearchFeatures(targetGroups = c("GoPros", "Points of Interest"))
+
+# , width = "100%") ##
 
 ```
 
