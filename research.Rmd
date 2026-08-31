@@ -1,5 +1,5 @@
 ---
-title: "Research (WIP)"
+title: "Research"
 date: 'Last updated: `r format(Sys.time(), "%d %B %Y")`'
 output:
   html_document:
@@ -9,72 +9,50 @@ output:
       smooth_scroll: true
 ---
 
-My research ... add text here ...
+## Arctic Charr and Climate Change
+#### PhD Dissertation at UMaine, Orono, ME
 
-Here are some projects I've worked on over the last several years.
 
-***
-## Arctic Charr
+![](images/Greg_charr.jpg){width=72%}  ![](images/brookie_surgery2.jpeg){width=26%}
 
-### Conservation and Climate Change
+\ 
+
+My research at the University of Maine revolves around the climate resilience of Arctic Charr (*Salvelinus alpinus*). The southern-most populations in North America occur in Maine, all of which are lacustrine rather than diadromous like many Alaska, Canadian, and European populations. These populations are glacial relicts and may be especially vulnerable to warming climate due.
+
+I'm studying the demography, population trends, and habitat associations of the Arctic Charr living in Floods Pond, the best-studied population in Maine. For my first dissertation chapter, I am using a long-term mark-recapture dataset to model their survival and estimate the spawning population size. My goal is to then relate any trends in these metrics to possible environmental drivers, especially those with relevance to climate change.
+
+However, my primary research revolves around the seasonal habitat use of Arctic Charr in Floods Pond using acoustic telemetry. I have surgically implanted 30 charr with tags that transmit a signal every 3 minutes and can estimate their locations with high precision (typically <10m). My latter dissertation chapters evaluate seasonal habitat use, diet, and bioenergetics these tagged charr, as well as interactions with sympatric Brook Trout (*Salvelinus fontinalis*), 12 of which have also been tagged.
+
 
 \ 
 
 ***
 
-### Movement Ecology
+## Movement Ecology and Restoration of Lake Sturgeon & Lake Trout
+#### US Fish and Wildlife Service at Lower Great Lakes FWCO, Basom, NY
 
-\ 
 
-***
+![](images/Greg_sturgeon1.jpg){width=60%} ![](images/Stocked sturgeon.jpg){width=39%}
 
-## Lake Sturgeon
-### 
-
-\ 
-
-***
-
-## Community Ecology
-### Onondaga Lake
-
-*** 
-<hr> <!-- <hr> and *** do the same thing -->
-
-## Formatting References (Delete Later)
-
-### *centered graphic*
-
-```{r, echo=FALSE, out.width="40%", out.height="40%", fig.cap="Test caption.", fig.show='hold', fig.align='center'}
-
-# adjust figure size: out.width = "###px" or out.width="40%", out.height="40%"
-knitr::include_graphics("images/greg_main3.jpg")
-
-``` 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-\ 
-
-***
-
-### *split-row offset graphics*
 
 <div class = "row">
 
 <div class = "col-md-6">
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Before Maine, I spent several years working on the recovery of Lake Sturgeon (*Acipenser fulvescens*) in the Lake Ontario basin, where they are a species listed as threatened in New York and endangered in Ontario waters. Using long-term passive acoustic telemetry and interagency PIT taggin records, I described lake-wide movement patterns, habitat use, and behavior in the Niagara River and across management units in New York. I also advised and assisted the St. Regis Mohawk Tribe with the evaluation of Lake Sturgeon river movements following dam removal.
+
+In addition, I assisted USGS and NYSDEC with projects to restore the native populations of Lake Trout (*Salvelinus namaycush*) and Cisco (*Coregonus artedi*) in Lake Ontario and Lake Erie. These included stocking, acoustic telemetry, and spawning site surveys. 
+
 
 </div>
 
 <div class = "col-md-6">
 
-```{r echo=FALSE, fig.cap = "Test caption.", fig.show='hold', fig.align='center', out.width = "400px"}
+```{r echo=FALSE, fig.cap = "Lake Sturgeon ", fig.show='hold', fig.align='center', out.width = "400px"}
 
 # figure width maxes out at out.width = "400px" to prevent overcrowding text
 
-knitr::include_graphics("images/greg_main3.jpg")
+knitr::include_graphics("images/greg_main.jpg")
 
 
 
@@ -82,31 +60,17 @@ knitr::include_graphics("images/greg_main3.jpg")
 </div>
 </div>
 
- \ 
 
+\ 
 
 ***
 
-### *add extra blank lines*
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Fish communities in a recovering urban lake
+#### MS Thesis at SUNY Environmental Science and Forestry, Syracuse, NY
 
+
+![](images/Onondaga-Lake.jpg){width=65%} ![](images/Greg_goldfish.jpg){width=34%}
 \ 
-\ 
 
-<div class = "row">
-
-<div class = "col-md-6">
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-</div>
-
-<div class = "col-md-6">
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-</div>
-</div>
-
-
+For my Master's research at SUNY ESF, I studied ecological succession of a fish assemblage as a heavily polluted system recovered. Onondaga Lake in Syracuse, New York was once among the most contaminated lakes in the country. I compared fish species richness and diversity using gill net and trap net data collected throughout the remediation process to track how the community responded to restoration efforts. In short, I found that there was a significant decrease in nearshore fish diversity that seemed to correlate with the establishment of an aggressive invasive macroalgae. Interestingly, the decrease in diversity was due to the proliferation of some preyfish species, such as Banded Kilifish and Round Goby, which may have been able to better hide from predators within the algae mats. 
